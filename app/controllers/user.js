@@ -41,10 +41,10 @@ const getUsersInCompany = (req, res) => {
         const usersId = []
         usersId.push(requestUser.userId)
         departmentsId = _.map(requestUser.departments, item => {
-          return item.role === constant.ROLE_ADMIN ? item.departmentId : -1
+          return item.role === constant.ROLE_ADMIN ? parseInt(item.departmentId) : -1
         })
         teamsId = _.map(requestUser.teams, item => {
-          return item.role === constant.ROLE_ADMIN ? item.teamId : -1
+          return item.role === constant.ROLE_ADMIN ? parseInt(item.teamId) : -1
         })
 
         Promise.all([userService.getUserInDepartments(departmentsId), userService.getUserInTeams(teamsId)])

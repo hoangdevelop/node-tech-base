@@ -2,8 +2,6 @@
 
 const models = require('../models/index')
 const baseService = require('./base')
-const _ = require('lodash')
-const { items } = require('joi/lib/types/array')
 
 const getUserInCompany = (companyId, filter, pageIndex, pageSize, sortField, sortType, users) => {
   const options = {
@@ -91,13 +89,9 @@ const getUserById = (userId) => {
 
 const getUserInDepartments = departments => {
   const attributes = ['userId']
-  const a = []
-  _.each(departments, item => {
-    a.push(item)
-  })
   const conditions = {
     departmentId: {
-      $in: a
+      $in: departments
     }
   }
   return baseService.findByCondition(models.usersDepartments, conditions, attributes)
@@ -105,13 +99,9 @@ const getUserInDepartments = departments => {
 
 const getUserInTeams = teams => {
   const attributes = ['userId']
-  const a = []
-  _.each(teams, item => {
-    a.push(item)
-  })
   const conditions = {
     teamId: {
-      $in: a
+      $in: teams
     }
   }
 
