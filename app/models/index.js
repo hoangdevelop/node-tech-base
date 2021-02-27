@@ -76,13 +76,13 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorial = require("./tutorial")(sequelize, Sequelize);
 db.company = require("./company")(sequelize, Sequelize);
 db.department = require("./department")(sequelize, Sequelize);
 db.user = require("./user")(sequelize, Sequelize);
 db.team = require("./team")(sequelize, Sequelize);
 db.usersDepartments = require("./users-departments")(sequelize, Sequelize);
 db.usersTeams = require("./users-teams")(sequelize, Sequelize);
+db.account = require("./account")(sequelize, Sequelize);
 
 /* Mapping on relationship between each tables */
 Object.keys(db).forEach((modelName) => {
