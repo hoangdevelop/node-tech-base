@@ -7,7 +7,9 @@
     "test": "nyc mocha --timeout 30000"
   },
   "standard": {
-    "env": [ "mocha" ]
+    "env": [
+      "mocha"
+    ]
   },
   "author": "khanhvu",
   "license": "ISC",
