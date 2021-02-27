@@ -46,7 +46,7 @@ const getUserInCompany = (companyId, filter, pageIndex, pageSize, sortField, sor
 
   if (users) {
     options.where.userId = {
-      $in: users
+      '$in': users
     }
   }
 
@@ -91,7 +91,7 @@ const getUserInDepartments = departments => {
   const attributes = ['userId']
   const conditions = {
     departmentId: {
-      $in: departments
+      '$in': departments
     }
   }
   return baseService.findByCondition(models.usersDepartments, conditions, attributes)
@@ -101,7 +101,7 @@ const getUserInTeams = teams => {
   const attributes = ['userId']
   const conditions = {
     teamId: {
-      $in: teams
+      '$in': teams
     }
   }
 

@@ -327,3 +327,5 @@
 [2021-02-28T01:39:47.940] [INFO] server - Recived a request with method POST to /api/accounts/login
 [2021-02-28T01:39:49.923] [INFO] server - Recived a request with method GET to /api/users
 [2021-02-28T01:40:02.955] [INFO] server - Recived a request with method GET to /api/users
+[2021-02-28T01:43:09.476] [INFO] server - Start server...
+[2021-02-28T01:43:13.803] [INFO] server - Recived a request with method GET to /api/users
