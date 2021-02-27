@@ -1,0 +1,31 @@
+{
+    "dbConfig": {
+        "HOST": "localhost",
+        "USER": "admin",
+        "PASSWORD": "123abc",
+        "DB": "test",
+        "dialect": "postgres",
+        "pool": {
+            "max": 5,
+            "min": 0,
+            "acquire": 30000,
+            "idle": 10000
+        }
+    },
+    "pagingConfig": {
+        "defaultPageIndex": 1,
+        "defaultPageSize": 10,
+        "maxPageSize": 1500,
+        "defaultSortType": "ASC",
+        "sortTypeList": [
+            "ASC",
+            "DESC"
+        ],
+        "ascSorting": "ASC",
+        "descSorting": "DESC"
+    },
+    "accessToken": {
+        "accessTokenSecret": "accessTokenSecret",
+        "refreshTokenSecret": "refreshTokenSecret"
+    }
+}
