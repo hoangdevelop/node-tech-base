@@ -8,6 +8,9 @@ log4js.configure({
   categories: { default: { appenders: ['server'], level: 'ALL' } }
 })
 
+const constant = require('./app/common/constant')
+const baseServive = require('./app/services/base')
+
 const logger = log4js.getLogger('server')
 logger.info('Start server...')
 
