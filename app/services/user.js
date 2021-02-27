@@ -91,7 +91,7 @@ const getUserInDepartments = departments => {
   const attributes = ['userId']
   const conditions = {
     departmentId: {
-      $in: [1,2]
+      $in: departments
     }
   }
   return baseService.findByCondition(models.usersDepartments, conditions, attributes)
@@ -101,7 +101,7 @@ const getUserInTeams = teams => {
   const attributes = ['userId']
   const conditions = {
     teamId: {
-      $in: [1,2]
+      $in: teams
     }
   }
 
