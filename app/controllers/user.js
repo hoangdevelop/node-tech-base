@@ -59,6 +59,7 @@ const getUsersInCompany = (req, res) => {
             return userService.getUserInCompany(requestUser.companyId, filter, pageIndex, pageSize, sortField, sortType, usersId)
           })
           .then(result => {
+            console.log(result)
             const response = convertUsersDataAdmin(result, pageIndex, pageSize)
             res.send(response)
           })
