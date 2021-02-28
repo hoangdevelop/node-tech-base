@@ -12,7 +12,6 @@ let refreshTokens = []
 
 const login = (req, res) => {
   const { username, password } = req.body
-
   userService.getUserByAccount(username, password)
     .then((user) => {
       const response = {}
@@ -20,7 +19,7 @@ const login = (req, res) => {
         response.accessToken = jwt.sign({ userName: user.userName, userId: user.userId }, accessTokenSecret, { expiresIn: '30m' })
         response.refreshToken = jwt.sign({ userName: user.userName, userId: user.userId }, refreshTokenSecret)
         response.userName = user.userName
-        refreshTokens.push(refreshToken)
+        refreshTokens.push(response.refreshToken)
 
         res.send(response)
       } else {
@@ -33,13 +32,16 @@ const login = (req, res) => {
 }
 
 const refreshToken = (req, res) => {
-  const { token } = req.body
+  const { refreshToken } = req.body
 
-  if (!token) {
+  console.log(refreshToken)
+  if (!refreshToken) {
     return res.sendStatus(StatusCodes.UNAUTHORIZED)
   }
 
-  if (!refreshTokens.includes(token)) {
+  const token = refreshToken
+
+  if (!token) {
     return res.sendStatus(StatusCodes.FORBIDDEN)
   }
 
@@ -57,8 +59,8 @@ const refreshToken = (req, res) => {
 }
 
 const logout = (req, res) => {
-  const { token } = req.body
-  refreshTokens = refreshTokens.filter(t => t !== token)
+  const authHeader = req.headers.authorization
+  refreshTokens = refreshTokens.filter(t => t.accessToken !== authHeader)
 
   res.send(messageCode.responseMessage(messageCode.I001))
 }

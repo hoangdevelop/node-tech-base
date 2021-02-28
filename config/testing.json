@@ -1,13 +1,14 @@
 {
     "dbConfig": {
-        "HOST": "ec2-52-70-67-123.compute-1.amazonaws.com",
-        "USER": "lpgsuhkpmfslap",
-        "PASSWORD": "c0562377e2dbda78aabab02edbbee050e89e5a99f273a1399cfaf61ad66d3e33",
-        "DB": "deljgof39hrf41",
+        "HOST": "localhost",
+        "USER": "admin",
+        "PASSWORD": "123abc",
+        "DB": "test",
         "dialect": "postgres",
-        "dialectOptions": {
-            "ssl": true
+        "dialectOptions":{
+            "ssl":false
         },
+        "logging": false,
         "pool": {
             "max": 5,
             "min": 0,

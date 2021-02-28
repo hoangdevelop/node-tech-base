@@ -55,7 +55,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     acquire: dbConfig.pool.acquire,
     idle: dbConfig.pool.idle
   },
-  logging: true,
+  logging: dbConfig.logging,
   operatorsAliases: operatorsAliases
 })
 

@@ -25,7 +25,7 @@ const getUsersInCompany = (req, res) => {
       if (pageSize > pagingConfig.maxPageSize) {
         res.status(StatusCodes.BAD_REQUEST).send(messageCode.responseMessage(messageCode.E003))
       }
-
+      
       const sortField = req.query.sort_field === undefined || fieldCanBeSorted.indexOf(req.query.sort_field) === -1 ? 'userId' : req.query.sort_field
       const sortType = req.query.sort_type === undefined || pagingConfig.sortTypeList.indexOf(req.query.sort_type.toUpperCase()) === -1 ? 'DESC' : req.query.sort_type
 

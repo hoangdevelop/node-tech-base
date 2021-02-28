@@ -49,7 +49,6 @@ const getUserInCompany = (companyId, filter, pageIndex, pageSize, sortField, sor
       $in: users
     }
   }
-
   return baseService.getAllWithFilterAndSort(models.user, options)
 }
 

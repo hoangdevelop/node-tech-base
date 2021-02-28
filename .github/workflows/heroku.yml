@@ -25,4 +25,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_TOKEN}}
           heroku_app_name: "demo-teachbase-01"
           heroku_email: "joyful.vu@gmail.com"
-      - run: npm test
