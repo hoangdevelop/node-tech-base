@@ -51,7 +51,7 @@ query parameter:
     sort_field: sort field,
     sort_type: sort type ASC or DESC
 ```
-life cycle of a requen:
+life cycle of a request:
 ![](https://github.com/khanhvu94/node-tech-base/blob/master/public/life_cycle_r.png?raw=true)
 
 Data example:
