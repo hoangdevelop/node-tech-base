@@ -8,9 +8,6 @@ log4js.configure({
   categories: { default: { appenders: ['server'], level: 'ALL' } }
 })
 
-const constant = require('./app/common/constant')
-const baseServive = require('./app/services/base')
-
 const logger = log4js.getLogger('server')
 logger.info('Start server...')
 
@@ -36,7 +33,7 @@ app.use(function (req, res, next) {
 
 // db configuration
 const db = require('./app/models')
-// db.sequelize.sync()
+db.sequelize.sync()
 
 // simple route
 app.get('/', (req, res) => {

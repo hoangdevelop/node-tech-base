@@ -187,8 +187,8 @@ describe('Test all APIs users management', () => {
           chai.request(app)
             .post(BASE_URL_LOGIN)
             .send({
-              'username': accountData.userName,
-              'password': accountData.passWord
+              username: accountData.userName,
+              password: accountData.passWord
             })
             .end((req, res) => {
               adminToken = res.body
@@ -196,7 +196,7 @@ describe('Test all APIs users management', () => {
               expect(adminToken).to.have.property('accessToken')
               expect(adminToken).to.have.property('refreshToken')
               expect(adminToken).to.have.property('userName')
-              done();
+              done()
             })
         })
       })
@@ -205,8 +205,8 @@ describe('Test all APIs users management', () => {
           chai.request(app)
             .post(BASE_URL_LOGIN)
             .send({
-              'username': accountData1.userName,
-              'password': accountData1.passWord
+              username: accountData1.userName,
+              password: accountData1.passWord
             })
             .end((req, res) => {
               departmentLeadToken = res.body
@@ -214,7 +214,7 @@ describe('Test all APIs users management', () => {
               expect(adminToken).to.have.property('accessToken')
               expect(adminToken).to.have.property('refreshToken')
               expect(adminToken).to.have.property('userName')
-              done();
+              done()
             })
         })
       })
@@ -223,8 +223,8 @@ describe('Test all APIs users management', () => {
           chai.request(app)
             .post(BASE_URL_LOGIN)
             .send({
-              'username': accountData2.userName,
-              'password': accountData2.passWord
+              username: accountData2.userName,
+              password: accountData2.passWord
             })
             .end((req, res) => {
               teamLeadToken = res.body
@@ -232,7 +232,7 @@ describe('Test all APIs users management', () => {
               expect(adminToken).to.have.property('accessToken')
               expect(adminToken).to.have.property('refreshToken')
               expect(adminToken).to.have.property('userName')
-              done();
+              done()
             })
         })
       })
@@ -241,8 +241,8 @@ describe('Test all APIs users management', () => {
           chai.request(app)
             .post(BASE_URL_LOGIN)
             .send({
-              'username': accountData3.userName,
-              'password': accountData3.passWord
+              username: accountData3.userName,
+              password: accountData3.passWord
             })
             .end((req, res) => {
               userToken = res.body
@@ -250,7 +250,7 @@ describe('Test all APIs users management', () => {
               expect(adminToken).to.have.property('accessToken')
               expect(adminToken).to.have.property('refreshToken')
               expect(adminToken).to.have.property('userName')
-              done();
+              done()
             })
         })
       })
@@ -259,12 +259,12 @@ describe('Test all APIs users management', () => {
           chai.request(app)
             .post(BASE_URL_LOGIN)
             .send({
-              'username': accountData4.userName,
-              'password': accountData4.passWord
+              username: accountData4.userName,
+              password: accountData4.passWord
             })
             .end((req, res) => {
               expect(res.statusCode).to.equal(401)
-              done();
+              done()
             })
         })
       })
@@ -321,30 +321,30 @@ describe('Test all APIs users management', () => {
               done()
             })
         })
-      }),
-        describe('with incorrect token', () => {
-          it('should be return forbiden', done => {
-            chai.request(app).get(BASE_URL_USER)
-              .set('Authorization', 'Bearer sasdajshdashdjashd')
-              .end(function (req, res) {
-                expect(res.statusCode).to.equal(403)
-                done()
-              })
-          })
-        }),
-        describe('with correct token', () => {
-          it('should be return success', done => {
-            chai.request(app).get(BASE_URL_USER)
-              .set('Authorization', `Bearer ${adminToken.accessToken}`)
-              .end(function (req, res) {
-                expect(res.statusCode).to.equal(200)
-                done()
-              })
-          })
+      })
+      describe('with incorrect token', () => {
+        it('should be return forbiden', done => {
+          chai.request(app).get(BASE_URL_USER)
+            .set('Authorization', 'Bearer sasdajshdashdjashd')
+            .end(function (req, res) {
+              expect(res.statusCode).to.equal(403)
+              done()
+            })
         })
+      })
+      describe('with correct token', () => {
+        it('should be return success', done => {
+          chai.request(app).get(BASE_URL_USER)
+            .set('Authorization', `Bearer ${adminToken.accessToken}`)
+            .end(function (req, res) {
+              expect(res.statusCode).to.equal(200)
+              done()
+            })
+        })
+      })
     })
     describe('to validate parameter', () => {
-      describe('without parameter',()=>{
+      describe('without parameter', () => {
         it('should be return success and response with default data', done => {
           chai.request(app)
             .get(BASE_URL_USER)
@@ -370,7 +370,7 @@ describe('Test all APIs users management', () => {
               })
           })
           it('should be return data has correct page index', done => {
-            const pageIndex = 1;
+            const pageIndex = 1
             chai.request(app)
               .get(BASE_URL_USER)
               .set('Authorization', `Bearer ${adminToken.accessToken}`)
@@ -443,7 +443,7 @@ describe('Test all APIs users management', () => {
               })
           })
           it('should be return data has correct page index', done => {
-            const pageSize = 1;
+            const pageSize = 1
             chai.request(app)
               .get(BASE_URL_USER)
               .set('Authorization', `Bearer ${adminToken.accessToken}`)
@@ -505,7 +505,7 @@ describe('Test all APIs users management', () => {
       })
       describe('filter', () => {
         describe('is correct value', () => {
-          const filter = '1';
+          const filter = '1'
           it('should be return success', done => {
             chai.request(app)
               .get(BASE_URL_USER)
@@ -617,8 +617,8 @@ describe('Test all APIs users management', () => {
         })
       })
     })
-    describe('to validate data accoding to permission',()=>{
-      describe('is director',()=>{
+    describe('to validate data accoding to permission', () => {
+      describe('is director', () => {
         it('should be return data all users in the same company', done => {
           chai.request(app).get(BASE_URL_USER)
             .set('Authorization', `Bearer ${adminToken.accessToken}`)
@@ -629,7 +629,7 @@ describe('Test all APIs users management', () => {
             })
         })
       })
-      describe('is department lead',()=>{
+      describe('is department lead', () => {
         it('should be return data all users in the same department', done => {
           chai.request(app).get(BASE_URL_USER)
             .set('Authorization', `Bearer ${departmentLeadToken.accessToken}`)
@@ -640,7 +640,7 @@ describe('Test all APIs users management', () => {
             })
         })
       })
-      describe('is team lead',()=>{
+      describe('is team lead', () => {
         it('should be return data all users in the same team lead', done => {
           chai.request(app).get(BASE_URL_USER)
             .set('Authorization', `Bearer ${teamLeadToken.accessToken}`)
@@ -651,7 +651,7 @@ describe('Test all APIs users management', () => {
             })
         })
       })
-      describe('is user',()=>{
+      describe('is user', () => {
         it('should be return data just user', done => {
           chai.request(app).get(BASE_URL_USER)
             .set('Authorization', `Bearer ${userToken.accessToken}`)

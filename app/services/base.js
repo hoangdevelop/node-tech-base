@@ -1,7 +1,5 @@
 'use strict'
 
-const models = require('../models/index')
-
 const insert = (model, data, transaction = null) => {
   return model.create(data, {
     transaction
