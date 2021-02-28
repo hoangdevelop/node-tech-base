@@ -10,6 +10,7 @@ const insert = (model, data, transaction = null) => {
       return insertResult
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
@@ -23,6 +24,7 @@ const update = (model, data, conditions, transaction) => {
       return updateResult
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
@@ -33,6 +35,7 @@ const bulkInsert = (model, arrayData) => {
       return insertResult
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
@@ -46,6 +49,7 @@ const findByCondition = (model, conditions, attributes) => {
       return records
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
@@ -56,6 +60,7 @@ const findAllByOptions = (model, options) => {
       return records
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
@@ -69,6 +74,7 @@ const getOneByCondition = (model, conditions, attributes) => {
       return records
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
@@ -79,6 +85,7 @@ const getOneByOptions = (model, options) => {
       return records
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
@@ -89,6 +96,7 @@ const getAllWithFilterAndSort = (model, options) => {
       return list
     })
     .catch(reason => {
+      console.log(reason)
       throw reason
     })
 }
@@ -100,6 +108,7 @@ const selectWithRawQuery = query => {
       return result
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
@@ -113,6 +122,7 @@ const deleteByConditions = (model, conditions, transaction) => {
       return rowDeleted
     })
     .catch(reason => {
+      console.log(reason)
       throw reason
     })
 }
@@ -127,6 +137,7 @@ const excuteQuery = (rawQuery, queryType, transaction = null) => {
       return records
     })
     .catch(error => {
+      console.log(reason)
       throw error
     })
 }
