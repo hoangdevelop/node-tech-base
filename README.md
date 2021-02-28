@@ -48,8 +48,11 @@ query parameter:
 ```
 life cycle of a requen:
 ![](https://github.com/khanhvu94/node-tech-base/blob/master/public/life_cycle_r.png?raw=true)
+
 Database schema:
+
 ![](https://github.com/khanhvu94/node-tech-base/blob/master/public/data_str.png?raw=true)
+
 Data example:
 | user name | password | role |
 | -------- | -------- | -------- |
