@@ -213,6 +213,4 @@ db.sequelize.sync({ force: true })
     return baseServive.bulkInsert(db.account, [accountData, accountData1, accountData2])
   })
 
-
-
 module.exports = app
