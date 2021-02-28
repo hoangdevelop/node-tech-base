@@ -1,0 +1,34 @@
+{
+    "dbConfig": {
+        "HOST": "ec2-52-70-67-123.compute-1.amazonaws.com",
+        "USER": "lpgsuhkpmfslap",
+        "PASSWORD": "c0562377e2dbda78aabab02edbbee050e89e5a99f273a1399cfaf61ad66d3e33",
+        "DB": "deljgof39hrf41",
+        "dialect": "postgres",
+        "dialectOptions": {
+            "ssl": true
+        },
+        "pool": {
+            "max": 5,
+            "min": 0,
+            "acquire": 30000,
+            "idle": 10000
+        }
+    },
+    "pagingConfig": {
+        "defaultPageIndex": 1,
+        "defaultPageSize": 10,
+        "maxPageSize": 1500,
+        "defaultSortType": "ASC",
+        "sortTypeList": [
+            "ASC",
+            "DESC"
+        ],
+        "ascSorting": "ASC",
+        "descSorting": "DESC"
+    },
+    "accessToken": {
+        "accessTokenSecret": "accessTokenSecret",
+        "refreshTokenSecret": "refreshTokenSecret"
+    }
+}
