@@ -35,12 +35,11 @@ header: Authorization
 
 support user refresh token when access token invalid.
 ```
-header: Authorization
 request body:{
     "refreshToken": refresh token
 }
 ```
->  post: /api/users
+>  get: /api/users
 
 support get list member in the same company of current use. API returns the list of user data by role of use.
 ```
